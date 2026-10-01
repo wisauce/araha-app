@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<image href="../jisik-2f-clean.jpg" width="1024" height="1024"/>
+<polyline points="693,606 693,650 430,650 392,650 377,680" fill="none" stroke="#FE6F42" stroke-width="3"/>
+<circle cx="686.0" cy="606.0" r="5" fill="red"/><path d="M 686.0 606.0 h 14" stroke="red" stroke-width="2"/>
+<g fill="#374957" font-family="sans-serif" font-size="11"><circle cx="693" cy="606" r="4"/><text x="701" y="598">toilet-start</text><circle cx="693" cy="650" r="4"/><text x="701" y="642">corridor-turn</text><circle cx="430" cy="650" r="4"/><text x="438" y="642">corridor-west</text><circle cx="392" cy="650" r="4"/><text x="400" y="642">ballroom-approach</text><circle cx="377" cy="680" r="4"/><text x="385" y="672">ballroom-door</text></g>
+<text x="50" y="100" font-family="sans-serif" font-size="24">ARAHA — proposed toilet to ballroom route</text>
+<text x="50" y="130" font-family="sans-serif" font-size="14">Provisional coordinates. Validate doorway and scale on site.</text></svg>

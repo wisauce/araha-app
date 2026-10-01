@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "floorId": "jisik-2f",
+  "floorName": "Jisik \u00b7 Second floor",
+  "calibrationStatus": "Provisional site geometry \u2014 verify on location",
+  "marker": {
+    "id": "ARAHA:JISIK:2F:START:V1",
+    "referenceImageName": "start-marker.png",
+    "physicalWidthMeters": 0.06,
+    "floorFromImage": [
+      0,
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1
+    ]
+  },
+  "mapImage": {
+    "asset": "floorplan.jpg",
+    "widthPixels": 1024,
+    "heightPixels": 1024,
+    "originPixel": [
+      686.0,
+      606.0
+    ],
+    "metersPerPixel": 0.0517
+  },
+  "startNodeId": "toilet-start",
+  "nodes": [
+    {
+      "id": "toilet-start",
+      "position": [
+        0.3619,
+        0,
+        0.0
+      ]
+    },
+    {
+      "id": "corridor-turn",
+      "position": [
+        0.3619,
+        0,
+        2.2748
+      ]
+    },
+    {
+      "id": "corridor-west",
+      "position": [
+        -13.2352,
+        0,
+        2.2748
+      ]
+    },
+    {
+      "id": "ballroom-approach",
+      "position": [
+        -15.1998,
+        0,
+        2.2748
+      ]
+    },
+    {
+      "id": "ballroom-door",
+      "position": [
+        -15.9753,
+        0,
+        3.8258
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "fromNodeId": "toilet-start",
+      "toNodeId": "corridor-turn",
+      "halfWidthMeters": 0.32
+    },
+    {
+      "id": "e1",
+      "fromNodeId": "corridor-turn",
+      "toNodeId": "corridor-west",
+      "halfWidthMeters": 0.55
+    },
+    {
+      "id": "e2",
+      "fromNodeId": "corridor-west",
+      "toNodeId": "ballroom-approach",
+      "halfWidthMeters": 0.55
+    },
+    {
+      "id": "e3",
+      "fromNodeId": "ballroom-approach",
+      "toNodeId": "ballroom-door",
+      "halfWidthMeters": 0.55
+    }
+  ],
+  "rooms": [
+    {
+      "id": "grand-ballroom",
+      "label": "Grand Ballroom",
+      "destinationNodeId": "ballroom-door",
+      "description": "2F \u00b7 Southern entrance"
+    }
+  ],
+  "positionSnapMaxMeters": 1.0,
+  "arrivalRadiusMeters": 0.65
+}

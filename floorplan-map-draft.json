@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "0.1-draft",
+  "status": "requires-site-calibration",
+  "source": {
+    "image": "jisik-2f-clean.jpg",
+    "widthPixels": 1024,
+    "heightPixels": 1024,
+    "description": "Second-floor architectural outline supplied by the project. Section 1 identifies the Grand Ballroom and the toilet; the QR start point is inside the toilet. The plan has no printed scale."
+  },
+  "coordinateSystem": {
+    "type": "image-pixels",
+    "origin": "top-left",
+    "xAxis": "right",
+    "zAxis": "down",
+    "unit": "pixel",
+    "conversionRequired": "Before using this file for AR navigation, establish a metres-per-pixel scale and a floor-to-marker transform from on-site measurements."
+  },
+  "calibration": {
+    "marker": {
+      "id": "ARAHA:JISIK:2F:START:V1",
+      "referenceImageName": "jisik-2f-start-sign",
+      "physicalWidthMeters": 0.065,
+      "markerMedium": "iPhone 13 display",
+      "display": {
+        "device": "iPhone 13",
+        "renderedSignWidthMeters": 0.065,
+        "renderedSignHeightMeters": 0.141,
+        "layout": "Full-screen, portrait. The QR code and distinct asymmetric tracking artwork are one combined sign image.",
+        "operatingRequirements": [
+          "Keep the iPhone fixed and facing into the toilet during Android-phone scanning.",
+          "Set brightness to maximum and disable auto-lock for the demonstration.",
+          "Do not change the displayed sign image after ARCore image-database calibration."
+        ]
+      },
+      "floorPlanPixel": [723.34, 635],
+      "mountingHeightMeters": 1.0,
+      "wall": "toilet south wall",
+      "facesPlanDirection": [0, -1],
+      "positionBasis": "Sign centre assumed one metre east of the south wall's western/left corner. Using 0.05170 metres per pixel, one metre equals 19.34 pixels from the approximate south-wall corner at [704, 635].",
+      "floorFromImage": null
+    },
+    "knownDistance": {
+      "description": "Grand Ballroom's shorter outer wall, supplied as 16 metres. The pixel endpoints trace the upper shorter wall of the ballroom on jisik-2f-clean.jpg.",
+      "fromPixel": [159, 248],
+      "toPixel": [460, 320],
+      "distanceMeters": 16.0,
+      "pixelDistance": 309.49,
+      "metresPerPixel": 0.05170
+    },
+    "measuredRouteChecks": [
+      {
+        "id": "ballroom-south-door-to-lower-east-hall-end",
+        "description": "Walkable route from beside the Grand Ballroom's southernmost doorway, along the lower long horizontal corridor, to the eastern hallway end where a room blocks further travel.",
+        "startPixel": [478, 718],
+        "endPixel": [952, 665],
+        "routeLengthMeters": 36.61,
+        "use": "Validate and tune the polyline edge lengths after the route is walked. Do not use this value alone as a global metres-per-pixel scale because it represents a route length and includes turns."
+      }
+    ],
+    "requiredInputs": [
+      "Measured distance between two identifiable points on the physical floor plan",
+      "Exact centre point and facing direction of the fixed QR/AR start sign",
+      "Measured active display width of the rendered iPhone 13 sign, if it differs from the initial 0.065 m value",
+      "Grand Ballroom doorway position verified on site"
+    ]
+  },
+  "graph": {
+    "nodes": [
+      { "id": "west-lobby", "label": "West lobby/open area", "pixel": [300, 510] },
+      { "id": "west-to-main", "label": "West corridor approach", "pixel": [430, 515] },
+      { "id": "main-west", "label": "Main corridor west", "pixel": [500, 515] },
+      { "id": "main-centre", "label": "Main corridor centre", "pixel": [620, 515] },
+      { "id": "main-east", "label": "Main corridor east", "pixel": [770, 515] },
+      { "id": "east-corridor", "label": "East corridor", "pixel": [900, 550] },
+      { "id": "lower-west", "label": "Lower corridor west", "pixel": [520, 665] },
+      { "id": "lower-centre", "label": "Lower corridor centre", "pixel": [660, 665] },
+      { "id": "lower-east", "label": "Lower corridor east", "pixel": [815, 665] },
+      { "id": "north-west-door", "label": "North-west room doorway", "pixel": [550, 430] },
+      { "id": "north-centre-door", "label": "North-centre room doorway", "pixel": [680, 495] },
+      { "id": "north-east-door", "label": "North-east room doorway", "pixel": [760, 495] },
+      { "id": "centre-west-door", "label": "Centre-west room doorway", "pixel": [580, 560] },
+      { "id": "centre-door", "label": "Centre room doorway", "pixel": [680, 560] },
+      { "id": "toilet-start", "label": "QR start point inside toilet", "pixel": [777, 621] },
+      { "id": "toilet-door", "label": "Toilet doorway", "pixel": [704, 585] },
+      { "id": "south-west-door", "label": "South-west room doorway", "pixel": [560, 690] },
+      { "id": "south-centre-door", "label": "South-centre room doorway", "pixel": [720, 690] },
+      { "id": "south-east-door", "label": "South-east room doorway", "pixel": [835, 690] }
+    ],
+    "edges": [
+      ["west-lobby", "west-to-main"],
+      ["west-to-main", "main-west"],
+      ["main-west", "main-centre"],
+      ["main-centre", "main-east"],
+      ["main-east", "east-corridor"],
+      ["main-west", "lower-west"],
+      ["main-centre", "lower-centre"],
+      ["main-east", "lower-east"],
+      ["lower-west", "lower-centre"],
+      ["lower-centre", "lower-east"],
+      ["main-west", "north-west-door"],
+      ["main-centre", "north-centre-door"],
+      ["main-east", "north-east-door"],
+      ["main-west", "centre-west-door"],
+      ["main-centre", "centre-door"],
+      ["main-east", "toilet-door"],
+      ["toilet-door", "toilet-start"],
+      ["lower-west", "south-west-door"],
+      ["lower-centre", "south-centre-door"],
+      ["lower-east", "south-east-door"]
+    ],
+    "notes": "The active prototype route is toilet-start → toilet-door → main-east → main-centre → main-west → west-to-main → west-lobby. Nodes and edges are an initial visual trace of apparent walkable circulation. Validate every edge and doorway on site before turning this draft into runtime navigation data."
+  },
+  "destinations": [
+    { "id": "grand-ballroom", "label": "Grand Ballroom", "nodeId": "west-lobby" }
+  ]
+}
